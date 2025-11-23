@@ -23,6 +23,11 @@
         <div id="unity-build-title">Talo</div>
       </div>
     </div>
+ <div>
+		<form onsubmit="FixInputOnSubmit()" autocomplete="off" style="width: 0px; height: 0px; position: absolute; top: -9999px;">
+			<input type="text" id="fixInput" oninput="gameInstance.Module.ccall('FixInputUpdate', null)" onblur="gameInstance.Module.ccall('FixInputOnBlur', null)" style="font-size: 42px;">
+		</form>
+	</div>
     <script>
       var canvas = document.querySelector("#unity-canvas");
 
@@ -121,7 +126,10 @@
             };
 
       document.body.appendChild(script);
-
+	function FixInputOnSubmit() {
+			document.getElementById("fixInput").blur();
+			event.preventDefault();
+		}
     </script>
   </body>
 </html>
