@@ -3,23 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Talo</title>
+    <title>Unity Web Player | LODC</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-<style>
-  #mobileInput {
-    position: absolute;
-    bottom: 10px;
-    left: 5%;
-    width: 90%;
-    height: 40px;
-    font-size: 20px;
-    z-index: 9999;
-    display: none;
-    background: white;
-    color: black;
-  }
-</style>
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -34,41 +20,11 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Talo</div>
+        <div id="unity-build-title">LODC</div>
       </div>
     </div>
-<input id="mobileInput"
-       type="text"
-       autocomplete="off"
-       autocorrect="off"
-       autocapitalize="off"
-       spellcheck="false"
-       oninput="SendTextToUnity(this.value)" />
     <script>
       var canvas = document.querySelector("#unity-canvas");
-var unityGameInstance = null;
-
-function ShowKeyboard() {
-  const input = document.getElementById("mobileInput");
-  input.style.display = "block";
-  input.focus();
-}
-
-function HideKeyboard() {
-  const input = document.getElementById("mobileInput");
-  input.blur();
-  input.style.display = "none";
-}
-
-function SendTextToUnity(value) {
-  if (unityGameInstance) {
-    unityGameInstance.SendMessage(
-      "WebGLKeyboardReceiver",
-      "OnTextChanged",
-      value
-    );
-  }
-}
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -96,15 +52,15 @@ function SendTextToUnity(value) {
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/TaloBuild.loader.js";
+      var loaderUrl = buildUrl + "/LodcBuild.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/TaloBuild.data.unityweb",
-        frameworkUrl: buildUrl + "/TaloBuild.framework.js.unityweb",
-        codeUrl: buildUrl + "/TaloBuild.wasm.unityweb",
+        dataUrl: buildUrl + "/LodcBuild.data.unityweb",
+        frameworkUrl: buildUrl + "/LodcBuild.framework.js.unityweb",
+        codeUrl: buildUrl + "/LodcBuild.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Talo",
+        productName: "LODC",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
@@ -154,7 +110,6 @@ function SendTextToUnity(value) {
         createUnityInstance(canvas, config, (progress) => {
           document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
               }).then((unityInstance) => {
-  unityGameInstance = unityInstance;
                 document.querySelector("#unity-loading-bar").style.display = "none";
                 document.querySelector("#unity-fullscreen-button").onclick = () => {
                   unityInstance.SetFullscreen(1);
