@@ -23,14 +23,15 @@ body {
 /* Desktop Portrait Container */
 #unity-container.unity-desktop {
     position: absolute;
-
     left: 50%;
     top: 50%;
-
     transform: translate(-50%, -50%);
 
-    width: min(90vw, 450px);
-    height: min(90vh, 800px);
+    /* Enforce 9:16 aspect ratio */
+    width: 45vh; /* 45% of viewport height */
+    max-width: 540px; /* Adjust based on your max desired width */
+    aspect-ratio: 9 / 16; 
+    height: 80vh; /* 80% of viewport height */
 
     border-radius: 30px;
     overflow: hidden;
@@ -38,11 +39,10 @@ body {
     border: 2px solid rgba(150, 100, 255, 0.25);
 
     box-shadow:
-        inset 0 0 25px rgba(120, 80, 255, 0.15),
+        inset 0 0 25px rgba(120, 255, 255, 0.15),
         0 0 25px rgba(120, 80, 255, 0.20),
         0 0 60px rgba(120, 80, 255, 0.10);
 }
-
 /* Premium inner frame effect */
 #unity-container.unity-desktop::before {
     content: "";
