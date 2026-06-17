@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | TriviaGame</title>
+    <title>Unity Web Player | QCM</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -20,7 +20,7 @@
       <div id="unity-footer">
         <div id="unity-logo-title-footer"></div>
         <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">TriviaGame</div>
+        <div id="unity-build-title">QCM</div>
       </div>
     </div>
     <script>
@@ -52,16 +52,16 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebGl.loader.js";
+      var loaderUrl = buildUrl + "/QCMBuild.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/WebGl.data.unityweb",
-        frameworkUrl: buildUrl + "/WebGl.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebGl.wasm.unityweb",
+        dataUrl: buildUrl + "/QCMBuild.data.unityweb",
+        frameworkUrl: buildUrl + "/QCMBuild.framework.js.unityweb",
+        codeUrl: buildUrl + "/QCMBuild.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "TriviaGame",
-        productVersion: "1.0.4",
+        productName: "QCM",
+        productVersion: "1.0",
         showBanner: unityShowBanner,
       };
 
